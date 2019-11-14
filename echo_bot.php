@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+/*session_start();
 //$count = 1;
 $servername = "localhost";
 username = "cat";
@@ -12,15 +12,15 @@ $con=mysqli_connect($servername,$username,$password,$dbname);
 if (!$con) {
 	die("Connection failed: " . mysqli_connect_error());
 }
-mysqli_set_charset($con,"utf8");
+mysqli_set_charset($con,"utf8");*/
 
 require_once('./LINEBotTiny.php');
 
 $channelAccessToken = '<your channel access token>';
 $channelSecret = '<your channel secret>';
 
-$sql = "SELECT * FROM gato WHERE 1";
-$result = mysqli_query($con,$sql);
+//$sql = "SELECT * FROM gato WHERE 1";
+//$result = mysqli_query($con,$sql);
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
