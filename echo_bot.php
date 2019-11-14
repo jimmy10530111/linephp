@@ -21,6 +21,7 @@ $channelSecret = '705311288e013e163f3ff55d0e735958';
 
 //$sql = "SELECT * FROM gato WHERE 1";
 //$result = mysqli_query($con,$sql);
+$test123='123';
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
@@ -35,7 +36,7 @@ foreach ($client->parseEvents() as $event) {
                             [
                                 'type' => 'text',
                                 //'text' => $row["Time"]
-								'text' => $message['text']
+								'text' => $test123
                             ]
                         ]
                     ]);
