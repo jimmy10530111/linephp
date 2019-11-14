@@ -1,25 +1,26 @@
 <?php
 
-/**
- * Copyright 2016 LINE Corporation
- *
- * LINE Corporation licenses this file to you under the Apache License,
- * version 2.0 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at:
- *
- *   https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations
- * under the License.
- */
+session_start();
+//$count = 1;
+$servername = "localhost";
+username = "cat";
+$password = "cat";
+$dbname = "bug";
+//creat connection
+$con=mysqli_connect($servername,$username,$password,$dbname);
+// Check connection
+if (!$con) {
+	die("Connection failed: " . mysqli_connect_error());
+}
+mysqli_set_charset($con,"utf8");
 
 require_once('./LINEBotTiny.php');
 
-$channelAccessToken = '1bb5FOnOqLXnv2W6KeZ+3ms0neF09E8h2KVffW1wjiqSGskGKLQ7/2PDNNBxUWTg6M8UzBtADTqq+hDcec0SbHKRHcVb9Fs8714MJA8MmLWWracX3dnFmJAz5vE7pJErclmgPAE60+M74Cm56+LyEgdB04t89/1O/w1cDnyilFU=';
-$channelSecret = '705311288e013e163f3ff55d0e735958';
+$channelAccessToken = '<your channel access token>';
+$channelSecret = '<your channel secret>';
+
+$sql = "SELECT * FROM gato WHERE 1";
+$result = mysqli_query($con,$sql);
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
@@ -33,7 +34,8 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => [
                             [
                                 'type' => 'text',
-                                'text' => $message['text']
+                                'text' => $row["Time"]
+								//'text' => $message['text']
                             ]
                         ]
                     ]);
