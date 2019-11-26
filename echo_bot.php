@@ -2,7 +2,7 @@
 
 
 require_once('./LINEBotTiny.php');
-require('http://163.17.27.180/phpsr.php');
+require('163.17.27.180/phpsr.php');
 
 $channelAccessToken = '1bb5FOnOqLXnv2W6KeZ+3ms0neF09E8h2KVffW1wjiqSGskGKLQ7/2PDNNBxUWTg6M8UzBtADTqq+hDcec0SbHKRHcVb9Fs8714MJA8MmLWWracX3dnFmJAz5vE7pJErclmgPAE60+M74Cm56+LyEgdB04t89/1O/w1cDnyilFU=';
 $channelSecret = '705311288e013e163f3ff55d0e735958';
